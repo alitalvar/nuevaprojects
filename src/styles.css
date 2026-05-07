@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --background: oklch(0.145 0.016 260);
+  --foreground: oklch(0.955 0.012 250);
+  --card: oklch(0.19 0.018 260);
+  --card-foreground: oklch(0.95 0.012 250);
+  --popover: oklch(0.18 0.018 260);
+  --popover-foreground: oklch(0.95 0.012 250);
+  --primary: oklch(0.72 0.14 170);
+  --primary-foreground: oklch(0.12 0.018 255);
+  --secondary: oklch(0.25 0.02 260);
+  --secondary-foreground: oklch(0.91 0.012 250);
+  --muted: oklch(0.24 0.016 260);
+  --muted-foreground: oklch(0.68 0.014 250);
+  --accent: oklch(0.31 0.04 250);
+  --accent-foreground: oklch(0.94 0.012 250);
+  --destructive: oklch(0.62 0.2 25);
+  --destructive-foreground: oklch(0.98 0.012 250);
+  --success: oklch(0.66 0.14 155);
+  --success-foreground: oklch(0.11 0.018 255);
+  --warning: oklch(0.76 0.15 80);
+  --warning-foreground: oklch(0.14 0.018 255);
+  --border: oklch(0.29 0.018 260);
+  --input: oklch(0.25 0.018 260);
+  --ring: oklch(0.72 0.14 170);
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 0%, color-mix(in oklch, var(--primary) 14%, transparent), transparent 28rem),
+    radial-gradient(circle at 80% 8%, color-mix(in oklch, var(--accent) 34%, transparent), transparent 24rem),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.kanban-not-started {
+  background: linear-gradient(180deg, color-mix(in oklch, var(--muted) 78%, transparent), color-mix(in oklch, var(--card) 92%, transparent));
+}
+
+.kanban-ongoing {
+  background: linear-gradient(180deg, color-mix(in oklch, var(--warning) 15%, var(--card)), color-mix(in oklch, var(--card) 94%, transparent));
+}
+
+.kanban-done {
+  background: linear-gradient(180deg, color-mix(in oklch, var(--success) 16%, var(--card)), color-mix(in oklch, var(--card) 94%, transparent));
+}
